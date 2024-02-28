@@ -1,0 +1,40 @@
+<div class="homepage">
+    <div class="homepagewrapper">
+        <h1>Welcome to My First Angular Page</h1>
+        <label for="name">Name:</label> <!-- Closing label tag added -->
+        <input type="text" name="name" id="name" #Pcomp (keyup)="0">
+        <label for="number">Number:</label> <!-- Added label for the number input -->
+        <input type="number" name="number" id="number" #Pcompnum (keyup)="0"> <!-- Assigned unique id "number" -->
+        <p>I am from child Component {{Cdata}}</p>
+        @if (isLogin) {
+        <div>
+            <h1 style="color: green;">User Log In........</h1>
+        </div>
+        }@else {
+        <div>
+            <h1 style="color: rgb(247, 14, 14);">User Log Out........</h1>
+        </div>
+        }
+        <div class="buttons" style="display: flex;">
+            @if(isLogin){
+
+            <button (click)="logoutHanderler()"
+                style="padding: 10px; background-color: rgb(228, 10, 10); margin: 10px; color: wheat; outline: none; border-radius: 10px;">Log
+                Out</button>
+            }@else {
+            <button (click)="loginHanderler()"
+                style="padding: 10px; background-color: green; margin: 10px; color: wheat; outline: none; border-radius: 10px;">Log
+                In</button>
+            }
+        </div>
+        <div>
+            <h1>The tranding Technology nows day's are </h1>
+            <ul style="display: flex; list-style: none;;">
+                @for(tech of technology;track tech.id){
+                    <li style="margin: 6px;">{{tech.name}}</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<app-test [Pdata]="Pcomp.value" [Pnumber]="Pcompnum.value" (childEvent)="getData($event)"></app-test>

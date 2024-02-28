@@ -1,0 +1,15 @@
+.homepagewrapper{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: hsl(0, 1%, 22%);
+    border-radius: 10px;
+    color: white;
+    
+    height: calc(100vh);
+}
+
+
